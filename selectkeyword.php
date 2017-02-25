@@ -6,15 +6,17 @@ $keyword=$_POST['keyword'];
 try{
 	$pdo = new PDO($service , 'root' , '');
 	$pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $result = $pdo -> query("select * from selectkeyword																																								 where keyword='{$keyword}'");
+    $result = $pdo -> query("select * from selectkeyword where keyword='{$keyword}'");
     $data = $result -> fetch(PDO::FETCH_ASSOC);
     if ($keyword == $data['keyword']) 
         {
-           /*跳转*/
+            $url="";
+            echo "<script>window.location.href='$url';</script>";
     	}
     else 
         {
-            /*跳转*/
+            $url="";
+            echo "<script>window.location.href='$url';</script>";
     	}
 }
 catch (PDOException $e) {

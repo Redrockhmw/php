@@ -14,7 +14,7 @@ try{
         $data = $result -> fetch(PDO::FETCH_ASSOC);
         if ($password == $data['password']) 
        {
-            $url="";
+            $url="HomePages.html";
             echo " window.location.href = '$url' ";  
         }
     else 
